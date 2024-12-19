@@ -21,7 +21,6 @@ type Response struct {
 func CalculatorHandler(w http.ResponseWriter, r *http.Request) {
 
 	var expr Expression
-
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusInternalServerError)
 		response := calculation.Error{Error: calculation.InternalServerError}
@@ -51,7 +50,6 @@ func CalculatorHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	encoder := json.NewEncoder(w)
-
 	err = encoder.Encode(Response{
 		Result: result,
 	})
@@ -65,18 +63,13 @@ func CalculatorHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func setupLogger()  *zap.Logger {
-	// Настраиваем конфигурацию логгера
-	config := zap.NewProductionConfig()
 
-	// Уровень логирования
+	config := zap.NewProductionConfig()
 	config.Level = zap.NewAtomicLevelAt(zapcore.InfoLevel)
-	
-	// Настраиваем логгер с конфигурацией
 	logger, err := config.Build()
 	if err != nil {
 		fmt.Printf("Ошибка настройки логгера: %v\n", err)
 	}
-	
 		return logger
 }
 
