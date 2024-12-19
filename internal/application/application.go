@@ -38,6 +38,12 @@ func CalculatorHandler(w http.ResponseWriter, r *http.Request) {
 
 	result, err := calculation.Calc(expr.Expression)
 	if err != nil {
+		if err == calculation.ErrDivisionByZero {
+			w.WriteHeader(http.StatusUnprocessableEntity)
+			response := calculation.Error{Error: calculation.DivisionByZero}
+			json.NewEncoder(w).Encode(response)
+			return
+		}
 		w.WriteHeader(http.StatusUnprocessableEntity)
 		response := calculation.Error{Error: calculation.ExpressionIsNotValid}
 		json.NewEncoder(w).Encode(response)

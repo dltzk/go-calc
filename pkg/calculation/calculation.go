@@ -117,6 +117,9 @@ func Calc(expression string) (float64, error) {
 				case "*":
 					stack = append(stack, first*second)
 				case "/":
+					if first == 0 {
+						return 0, ErrDivisionByZero
+					}
 					stack = append(stack, second/first)
 				}
 			}
