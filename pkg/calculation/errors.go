@@ -2,6 +2,12 @@ package calculation
 
 import "errors"
 
+type Error struct {
+	Error string`json:"error"`
+}
+
 var (
-	ErrInvalidExpression = errors.New("invalid expression")
+	ExpressionIsNotValid = "Expression is not valid"
+	InternalServerError = "Internal server error"
+	ErrInvalidExpression = errors.New("Invalid expression")
 )
