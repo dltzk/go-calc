@@ -14,23 +14,29 @@
 
 Для запуска этого проекта необходимо иметь:
 - Установленный Go (версия не ниже 1.23)
+- Две установленные библиотеки (Логгер от Uber и Mux от Gorilla)
 - Доступ к командной строке
 
 А для его отладки желательно использовать Postman или curl. Лично мной веб-сервис тестировался в Postman'е. Чтобы работать с нашим локальным API, также нужно установить Postman Agent (https://www.postman.com/downloads/postman-agent/).
 
-1. Склонируйте репозиторий в удобную папку:
+1. Установите две дополнительные библиотеки:
+```bash
+go get go.uber.org/zap
+go get github.com/gorilla/mux
+```
+2. Склонируйте репозиторий в удобную папку:
 ```bash
 git clone https://github.com/dltzk/go-calc
 ```
-2. Перейдите в каталог проекта
+3. Перейдите в каталог проекта
 ```bash
 cd <путь_к_проекту>
 ```
-3. Запустите файл main.go в папке cmd
+4. Запустите файл main.go в папке cmd
 ```bash
 go run cmd/main.go
 ```
-4. Перейдите в Postman Desktop или зайдите на сайт, создайте Workspace, нажмите на + и готовьтесь отправлять запросы.
+5. Перейдите в Postman Desktop или зайдите на сайт, создайте Workspace, нажмите на + и готовьтесь отправлять запросы.
 ![Вспомогающий скриншот](https://sun9-53.userapi.com/impg/wUdOux05nfYLqvW1Ugl3e-JghpKl_oj4Bbrm6A/l5qkAYQlzTg.jpg?size=1915x919&quality=95&sign=f11719393418633767f1dd9212ecf5f9&type=album)
 ![2](https://sun9-79.userapi.com/impg/2Mq6jvFuPGNrABxHizZ6whzHbbLIR_GH_DwcHA/AILJth4W6qA.jpg?size=1916x912&quality=95&sign=f71ed83088704c42148470eceec8f3e9&type=album)
 
