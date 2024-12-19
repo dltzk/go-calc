@@ -19,18 +19,19 @@
 
 А для его отладки желательно использовать Postman или curl. Лично мной веб-сервис тестировался в Postman'е. Чтобы работать с нашим локальным API, также нужно установить Postman Agent (https://www.postman.com/downloads/postman-agent/).
 
-1. Установите две дополнительные библиотеки:
-```bash
-go get go.uber.org/zap
-go get github.com/gorilla/mux
-```
-2. Склонируйте репозиторий в удобную папку:
+1. Склонируйте репозиторий в удобную папку:
 ```bash
 git clone https://github.com/dltzk/go-calc
 ```
-3. Перейдите в каталог проекта
+2. Перейдите в каталог проекта
 ```bash
 cd <путь_к_проекту>
+```
+3. Пропишите следующие команды для установки зависимостей:
+```bash
+go mod init github.com/dltzk/go-calc
+go get go.uber.org/zap
+go get github.com/gorilla/mux
 ```
 4. Запустите файл main.go в папке cmd
 ```bash
