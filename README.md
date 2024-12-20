@@ -37,12 +37,19 @@ go get github.com/gorilla/mux
 ```bash
 go run cmd/main.go
 ```
-5. Перейдите в Postman Desktop или зайдите на сайт, создайте Workspace, нажмите на + и готовьтесь отправлять запросы.
+5. Перейдите в Postman Desktop или зайдите на сайт, залогиньтесь, создайте Workspace, нажмите на + и готовьтесь отправлять запросы.
 ![Вспомогающий скриншот](https://sun9-53.userapi.com/impg/wUdOux05nfYLqvW1Ugl3e-JghpKl_oj4Bbrm6A/l5qkAYQlzTg.jpg?size=1915x919&quality=95&sign=f11719393418633767f1dd9212ecf5f9&type=album)
 ![2](https://sun9-79.userapi.com/impg/2Mq6jvFuPGNrABxHizZ6whzHbbLIR_GH_DwcHA/AILJth4W6qA.jpg?size=1916x912&quality=95&sign=f71ed83088704c42148470eceec8f3e9&type=album)
 
 # Примеры запроса к API:
 Нужно помнить, что сервис принимает только POST запросы, на другие запросы он будет ссылаться на неизвестную ошибку и выдавать code 500, даже если выражение верное.
+
+Шаблон запроса:
+```bash
+{
+    "expression": "ваше_выражение"
+}
+```
 
 ### Пример запроса с 500 кодом:
 1. Запрос с неправильным методом:
